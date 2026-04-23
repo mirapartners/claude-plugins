@@ -1,0 +1,8 @@
+{
+  "name": "slack-notion-bridge",
+  "version": "1.0.0",
+  "description": "Slack ↔ Notion 연동 봇 구축 가이드 스킬. 메시지/스레드/리액션/슬래시커맨드 → Notion 기록, Notion 속성 변경 → Slack 알림 양방향 패턴 제공.",
+  "author": {
+    "name": "Mira Asset Partners DX"
+  }
+}

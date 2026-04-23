@@ -1,0 +1,15 @@
+# Slack App에서 발급받는 토큰들
+SLACK_BOT_TOKEN=xoxb-...
+SLACK_APP_TOKEN=xapp-...
+
+# 이미지 블록 기능을 쓸 때만 필요 (User Token Scope: files:write)
+SLACK_USER_TOKEN=xoxp-...
+
+# 대상 채널 ID (채널 이름 우클릭 → View channel details → Channel ID)
+SLACK_CHANNEL_ID=C09XXXXXXXX
+
+# Notion Integration 토큰 (https://www.notion.so/profile/integrations)
+NOTION_TOKEN=ntn_...
+
+# 대상 DB ID (DB URL에서 32자 hex, 하이픈 없이)
+NOTION_DATABASE_ID=abcdef0123456789abcdef0123456789

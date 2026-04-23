@@ -1,0 +1,14 @@
+{
+  "name": "mirapartners",
+  "owner": {
+    "name": "Mira Asset Partners DX"
+  },
+  "plugins": [
+    {
+      "name": "slack-notion-bridge",
+      "source": "./slack-notion-bridge",
+      "description": "Slack ↔ Notion 연동 봇을 만들 때 참고하는 빌딩블록 키트 (Python, slack_bolt + notion-client, Socket Mode).",
+      "version": "1.0.0"
+    }
+  ]
+}

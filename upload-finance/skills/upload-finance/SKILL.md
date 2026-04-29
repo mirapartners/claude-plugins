@@ -1,9 +1,17 @@
 ---
 name: upload-finance
-description: Use when the user wants to upload financial statements to mirafaan for post-investment portfolio company management. Triggers include "재무제표 업로드", "미라판 업로드", "사후관리 재무제표", "full_audit 실행".
+description: Use when the user wants to upload portfolio company documents (financial statements, shareholder registers, corporate registry, insurance, etc.) to mirafaan for post-investment management. Triggers include "재무제표 업로드", "미라판 업로드", "사후관리 재무제표", "파일 업로드", "full_audit 실행", "주주명부 업로드", "등기부 업로드".
 ---
 
-사후관리 피투자기업 재무제표 미라판 업로드를 진행합니다.
+사후관리 피투자기업 자료를 Google Drive에서 찾아 미라판에 일괄 업로드합니다.
+파일명 키워드로 유형을 자동 분류하여 각 input에 업로드합니다.
+
+파일 유형 분류 기준:
+- 재무/손익/BS/IS/balance/income/표준재무 → finance_file (재무제표)
+- 주주 → shareholder_file (주주명부)
+- 등기 → certify_file (등기부등본)
+- 보험/4대/사대 → insurance_file (4대보험)
+- 그 외 → etc_file (기타자료)
 
 ## 사전 확인 (반드시 사용자에게 물어볼 것)
 
@@ -11,7 +19,7 @@ description: Use when the user wants to upload financial statements to mirafaan 
 
 1. **작업 디렉토리** — full_audit.py가 있는 프로젝트 폴더 경로
 2. **Drive 부모 폴더 ID** — 이번에 업로드할 GP 파일들이 있는 Google Drive 폴더 ID
-   - [완료] 태그가 붙은 폴더는 스킵됨. 스캔 대상 폴더에 태그가 없는지 될 왔쪍
+   - [완료] 태그가 붙은 폴더는 스킵됨. 스캔 대상 폴더에 태그가 없는지 확인 요청
 3. **미라판 프로그램 코드** — 기본값 U8IgUOsKzpgjK (사후관리 화면). 다른 프로그램이면 알려달라고 요청
 4. **업로드 대상 회사 목록 기준** — finance_upload_result.json의 uploaded 리스트 사용 여부, 또는 별도 목록이 있는지 확인
 
@@ -42,7 +50,7 @@ description: Use when the user wants to upload financial statements to mirafaan 
 드라이런 결과(대기중 회사 수, 목록)를 정리해서 보여주세요. 그리고:
 
 > 본실행 예정: python full_audit.py
-> 위 N개 회사에 재무제표를 업로드합니다. 브라우저가 열리고 자동으로 진행됩니다.
+> 위 N개 회사에 파일을 업로드합니다. 파일명으로 유형을 자동 분류하여 각 항목에 업로드합니다.
 > 실행할까요?
 
 동의하면 Bash로 실행합니다.
@@ -58,5 +66,5 @@ description: Use when the user wants to upload financial statements to mirafaan 
 - hash_id는 절대 고정하지 말 것: 회사별로 달라질 수 있음. full_audit.py가 보기 버튼 클릭으로 매번 동적 추출
 - [완료] 폴더는 스킵: 사용자가 수기로 태그 기재, 이미 끝난 폴더
 - U8IgUOsKzpgjK와 Qv8p2lwYXm1Bj는 완전히 다른 미라판 프로그램: hash_id 서로 호환 안 됨
-- 복수 파일은 ZIP 압축 후 업로드 (full_audit.py가 자동 처리)
+- 같은 유형의 파일이 복수이면 ZIP 압축 후 업로드 (full_audit.py가 자동 처리)
 - 제출하기 버튼: button.confirm_submit_open 클릭 후 button.basic_info_save_btn 클릭

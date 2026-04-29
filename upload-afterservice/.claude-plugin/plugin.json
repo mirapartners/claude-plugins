@@ -1,0 +1,8 @@
+{
+  "name": "upload-afterservice",
+  "version": "1.0.0",
+  "description": "사후관리 피투자기업 자료를 Google Drive에서 받아 미라판에 자동 업로드하는 스킬.",
+  "author": {
+    "name": "Mira Asset Partners DX"
+  }
+}

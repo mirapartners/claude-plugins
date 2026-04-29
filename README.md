@@ -18,6 +18,7 @@ Claude Code를 열고 아래 명령을 한 줄씩 입력하세요:
 | 이름 | 설명 |
 |------|------|
 | [`slack-notion-bridge`](./slack-notion-bridge) | Slack ↔ Notion 연동 봇을 만들 때 참고하는 빌딩블록 키트 |
+| [`upload-finance`](./upload-finance) | 사후관리 피투자기업 재무제표를 Google Drive에서 받아 미라판에 자동 업로드 |
 
 ## 업데이트
 
